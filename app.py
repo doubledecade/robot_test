@@ -5,6 +5,8 @@ token = os.environ.get("WEROBOT_TOKEN", "")
 port = os.environ.get("PORT", 0)
 if token != "" and port != 0:
     print("环境变量读取成功")
+else:
+    print("读取环境变量失败")
 robot = werobot.WeRoBot(token=token)
 
 
