@@ -14,7 +14,7 @@ logger.addHandler(stream_handler)
 token = os.environ.get("WEROBOT_TOKEN", "")
 port = os.environ.get("PORT", 0)
 if token != "" and port != 0:
-    logger.log('环境变量读取成功')
+    logger.info('环境变量读取成功')
     logger.debug("端口是{}".format(port))
     logger.debug("token是{}".format(token))
 
