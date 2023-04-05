@@ -1,12 +1,24 @@
 import werobot
 import os
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
 
 token = os.environ.get("WEROBOT_TOKEN", "")
 port = os.environ.get("PORT", 0)
 if token != "" and port != 0:
-    print("环境变量读取成功")
+    logger.error('T环境变量读取成功')
+
 else:
-    print("读取环境变量失败")
+    logger.error('读取环境变量失败')
+
 robot = werobot.WeRoBot(token=token)
 
 
