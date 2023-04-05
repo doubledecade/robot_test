@@ -1,1 +1,2 @@
-werobot
+werobot~=1.13.1
+Flask~=2.2.3
